@@ -1,3 +1,2 @@
-### Laborator Programare in Retea :
-
-## Git-Desktop Used.
+### PR-Laboratory work:
+Git-Desktop Used.
