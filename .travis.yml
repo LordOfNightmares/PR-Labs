@@ -6,6 +6,6 @@ python:
 install:
   - pip install unittest2
 # command to run tests
-script: python PythonTestLab.py
+script: python Lab1/PythonTestLab.py
 os:
   - windows
