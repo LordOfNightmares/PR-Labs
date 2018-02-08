@@ -7,7 +7,7 @@ python:
   - "nightly"
 # command to install dependencies
 install:
-  - pip install -r unittest2
+  - pip install unittest2
 # command to run tests
 script: python PythonTestLab.py
 os:
