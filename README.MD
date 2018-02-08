@@ -4,6 +4,5 @@ Git-Desktop Used.
 Python.
 ## Travis CI Integration: 
 https://travis-ci.org/LordOfNightmares/PR-Labs
-
-![Example1](png/travis.png | height=500)
-![Example2](png/travis2.png =500x500)
+<img src="png/travis.png" width="600">
+<img src="png/travis2.png" width="600">
