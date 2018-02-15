@@ -24,9 +24,9 @@ class CountdownThread(T):
             with L():
                 current_thread = self.name[len("Thread-")::]
                 if current_thread == '1':
-                    print(bcolors.OKBLUE,"Countdown", self.count,self.count)
+                    print(bcolors.OKBLUE, "Countdown", self.count, self.count)
                 if current_thread == '2':
-                    print(bcolors.WARNING,"Countdown", self.count,self.count)
+                    print(bcolors.WARNING, "Countdown", self.count, self.count)
                 self.count -= 1
             time.sleep(.1)
         return
@@ -36,4 +36,3 @@ t1 = CountdownThread(10)
 t1.start()
 t2 = CountdownThread(20)
 t2.start()
-
