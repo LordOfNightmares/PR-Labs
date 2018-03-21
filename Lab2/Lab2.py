@@ -89,7 +89,6 @@ def reading(url):
         Tr.append(Threads(urls[i], headers))
     for i in range(len(urls)):
         Tr[i].start()
-    return
 
 
 def path(text):
