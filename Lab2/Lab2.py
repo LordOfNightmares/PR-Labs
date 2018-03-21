@@ -99,4 +99,5 @@ def path(text):
     return path
 
 
-reading(url)
+if __name__ == "__main__":
+    reading(url)
