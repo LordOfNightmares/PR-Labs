@@ -63,7 +63,7 @@ Here's what functionality your app must offer:
 2. Using your secret key, request data from all devices concurrently
 3. If you get an error related to your access key, go back to **step 1** and retry
 4. Parse data from all devices
-5. Aggregate all responses ordering by sensor type (example of output below)
+5. Aggregate all responses ordering by sensor type .
 
 ## Results
 <img src="png/pic1.png" width="400">
