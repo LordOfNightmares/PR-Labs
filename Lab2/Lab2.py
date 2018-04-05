@@ -3,9 +3,10 @@ from bs4 import BeautifulSoup
 import requests
 import json
 import time
-from threading import Thread as T, Lock as L
+from threading import Thread as T
 
 url = "https://desolate-ravine-43301.herokuapp.com"
+queue = []
 
 
 class BC:
@@ -14,7 +15,7 @@ class BC:
     OKGREEN = '\033[92m'
     WARNING = '\033[93m'
     FAIL = '\033[91m'
-    ENDC = '\033[0m'
+    ENDC = '\033[90m'
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
@@ -25,70 +26,33 @@ class Threads(T):
         self.url, self.headers = url, headers
 
     def run(self):
-        def output(device_id, sensor, value):
-            device_id, sensor, value = device_id, int(sensor), float(value)
-            if sensor == 0:
-                print(BC.OKGREEN, "Temperature:")
-            if sensor == 1:
-                print(BC.OKGREEN, "Humidity:")
-            if sensor == 2:
-                print(BC.OKGREEN, "Alien Presence:")
-            if sensor == 3:
-                print(BC.OKGREEN, "Dark Matter")
-            if sensor == 4:
-                print(BC.OKGREEN, "Ghost Presence:")
-            if sensor >= 5:
-                print(BC.OKBLUE, "Does this Sensor even exist:")
-            # ---------------------
-            print("Device", device_id, "-", value, sep=' ', end='', flush=True)
-            # ---------------------
-            if value > 0 and sensor == 3:
-                print(BC.WARNING, "(Is 'CERN' particle accelerator turned off?)")
-            if value == 0 and sensor == 2:
-                print("(No aliens detected)")
-            if value > 0 and sensor == 2:
-                print(BC.FAIL, "(RUN - ALIEN LIFE DETECTED)")
-            if value > 0 and sensor == 4:
-                print(BC.FAIL, "(RIP - GHOSTS DETECTED)")
-            print()
+        start = time.time()
+        response = requests.get(self.url, headers=self.headers)
+        roundup = time.time() - start
+        print(BC.BOLD, "\n", self.name, "Status Code -",
+              response.status_code, "(", round(roundup, 4), "s )\nUrl:", self.url)
 
-        def parsing(content_type, text):
-            if content_type == "Application/xml":
-                soup = BeautifulSoup(text, 'html.parser')
-                output(soup.device['id'], soup.type.string, soup.value.string)
-            elif content_type == "Application/json":
-                j_file = json.loads(text)
-                output(j_file['device_id'], j_file['sensor_type'], j_file['value'])
-
-            elif content_type == "text/csv":
-                text = [s.split(",") for s in text.splitlines()]
-                for i in range(len(text)):
-                    if i != 0:
-                        output(text[i][0], text[i][1], text[i][2])
-            else:
-                print(text)
-
-        with L():
-            start = time.time()
-            response = requests.get(self.url, headers=self.headers)
-            roundtrip = time.time() - start
-            print(BC.HEADER, "\n", self.name, "Statuscode",
-                  response.status_code, round(roundtrip, 4), "s\nUrl:", self.url)
-            parsing(response.headers["Content-Type"], response.text)
+        if response.headers["Content-Type"] == "text/csv":
+            appending = parsing(response.headers["Content-Type"], response.text)
+            for i in range(len(appending)):
+                queue.append(appending[i])
+        else:
+            queue.append(parsing(response.headers["Content-Type"], response.text))
 
 
-def reading(url):
-    # link = url + key
-    response = requests.post(url)
-    print("Status code", response.status_code)
-    headers = {"Session": response.headers['Session']}
-    urls = path(response.json())
-    Tr = []
-
-    for i in range(len(urls)):
-        Tr.append(Threads(urls[i], headers))
-    for i in range(len(urls)):
-        Tr[i].start()
+def parsing(content_type, text):
+    if content_type == "Application/xml":
+        soup = BeautifulSoup(text, 'html.parser')
+        return [soup.device['id'], soup.type.string, soup.value.string]
+    elif content_type == "Application/json":
+        j_file = json.loads(text)
+        return [j_file['device_id'], j_file['sensor_type'], j_file['value']]
+    elif content_type == "text/csv":
+        text = [s.split(",") for s in text.splitlines()]
+        x = [[text[i][0], text[i][1], text[i][2]] for i in range(len(text)) if i != 0]
+        return x
+    else:
+        print(text)
 
 
 def path(text):
@@ -98,5 +62,49 @@ def path(text):
     return path
 
 
+def results(url):
+    # link = url + key
+    response = requests.post(url)
+    print("Initial Status Code", response.status_code)
+    headers = {"Session": response.headers['Session']}
+    urls = path(response.json())
+    '''
+    Threads-execution
+    Tr - list of threads.
+    '''
+    Tr = [Threads(urls[i], headers) for i in range(len(urls))]
+    for i in range(len(urls)):
+        Tr[i].start()
+    for i in range(len(urls)):
+        Tr[i].join()
+	#queue processing
+    queue.remove(None)
+    queue.sort(key=lambda x: (int(x[1]), float(x[2])))
+    s = [i for i in range(6)]
+    for i in range(len(queue)):
+        output(queue[i], s)
+
+
+def output(block, s):
+    device_id, sensor, value = block[0], int(block[1]), block[2]
+    if sensor in s:
+        if sensor == 0:
+            print(BC.OKGREEN, "\nTemperature:")
+        if sensor == 1:
+            print(BC.HEADER, "\nHumidity:")
+        if sensor == 2:
+            print(BC.FAIL, "\nAlien Presence:")
+        if sensor == 3:
+            print(BC.ENDC, "\nDark Matter")
+        if sensor == 4:
+            print(BC.OKBLUE, "\nGhost Presence:")
+        if sensor == 5:
+            print(BC.WARNING, "\nDoes this Sensor even exist:")
+        s.remove(sensor)
+    # ---------------------
+    print(" •Device", device_id, "-", value)
+    # ---------------------
+
+
 if __name__ == "__main__":
-    reading(url)
+    results(url)
