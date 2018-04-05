@@ -66,5 +66,5 @@ Here's what functionality your app must offer:
 5. Aggregate all responses ordering by sensor type (example of output below)
 
 ## Results
-<img src="png/pic1.png" width="800">
-<img src="png/pic2.png" width="800">
+<img src="png/pic1.png" width="400">
+<img src="png/pic2.png" width="400">
