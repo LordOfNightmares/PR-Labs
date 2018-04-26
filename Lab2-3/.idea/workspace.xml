@@ -72,7 +72,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="39" />
     <option name="y" value="-18" />
     <option name="width" value="1346" />
@@ -207,7 +207,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="1" weight="0.15300146" />
       <window_info anchor="bottom" id="TODO" order="9" />
@@ -216,7 +215,7 @@
       <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" weight="0.3290938" />
       <window_info anchor="bottom" id="Version Control" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="2" />
-      <window_info active="true" anchor="right" id="Run" order="6" visible="true" weight="0.5190337" />
+      <window_info anchor="right" id="Run" order="6" weight="0.5190337" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="3" weight="0.17434211" />
       <window_info id="Favorites" order="0" side_tool="true" />
