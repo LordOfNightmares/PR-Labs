@@ -116,7 +116,7 @@ def start_client(address, port, buffer): #handles the socket connection and data
 
 
 # Commands on the server side
-ss
+
 ```
 /help - displays this list of available commands
 
