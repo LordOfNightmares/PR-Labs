@@ -97,7 +97,27 @@ Atît clientul, cît și serverul pot fi aplicații simple fără GUI.
   fișierul în previewer-ul suportat de OS.
   
 </details>
- 
+# Commands on the server side
+```
+===============
+=== h e l p ===
+===============
+/help - displays this list of available commands
+
+/hello <text> - returns the text that was sent as param
+/prime <int> - tells if the given number is prime
+/area <int> <int> - tells the area of a rect with given x,y params
+
+/answer - responds to your most interested question with an 'yes' or 'no' 
+/joke - tells a python joke
+
+/exit - closes connection
+===============
+```
+# Commands on the client side
+```
+/close - closes the connection from the client tot he server.
+```
 ### ServerStart
 
 ![ScreenShot](png/serverstart.png)
