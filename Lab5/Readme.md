@@ -1,5 +1,6 @@
 <details>
 <summary>Task</summary>
+
 ## TCP
 
 Elaborarea unei aplicații Client - Server cu scopul studierii
@@ -94,7 +95,8 @@ Atît clientul, cît și serverul pot fi aplicații simple fără GUI.
 - Dacă serverul primește o comandă specifică, el trebuie să transmită clientului un oarecare fișier (imagine, text file, pdf etc).
   Clientul trebuie să salveze acest fișierul primit (păstrând extensia) și să afișeze calea absolută la locația salvată, sau să deschidă 
   fișierul în previewer-ul suportat de OS.
- </details>
+  
+</details>
  
 ### ServerStart
 
