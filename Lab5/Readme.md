@@ -105,7 +105,7 @@ Atît clientul, cît și serverul pot fi aplicații simple fără GUI.
 ```
 def functions(logger,connection, data): # handles the protocol/functions of the server
 def handle(connection, address):        # handles the socket connection and data recieved and sent
-class Server(object): 					# handles the sockets instatiation on threads and listens all clients connected
+class Server(object):                   # handles the sockets instatiation on threads and listens all clients connected
 ```
 ## Client side description
 
