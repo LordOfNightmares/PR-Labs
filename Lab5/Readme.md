@@ -1,3 +1,5 @@
+# Client - Server Application
+
 <details>
 <summary>Task</summary>
 
@@ -119,7 +121,7 @@ Atît clientul, cît și serverul pot fi aplicații simple fără GUI.
 
 # Commands on the client side
 
-`/close - closes the connection from the client tot he server.`
+`/close - closes the connection from the client from the server.`
 
 ### ServerStart
 
