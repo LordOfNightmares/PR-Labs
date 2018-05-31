@@ -14,7 +14,7 @@ def handle(connection, address):
                 break
             logger.debug("Received data %r", data)
             connection.sendall(data)
-            logger.debug("Sent data")
+
     except:
         logger.exception("Problem handling request")
     finally:

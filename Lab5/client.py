@@ -12,13 +12,12 @@ def start_client(address, port, buffer):
         print("=== Connecting to %s" % (address,))
         # Recv up to 1kB of data
         data = bytes(input(), 'utf-8')
-
-        client_socket.send(data)
+        client_socket.sendall(data)
         result = client_socket.recv(buffer)
         print(">>> Sent data %s" % (result,))
         # Send `data` to the client
         # Close outgoing connection
-        client_socket.close()
+    client_socket.close()
 
 
 if __name__ == '__main__':
