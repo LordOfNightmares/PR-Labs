@@ -11,7 +11,7 @@ The application is using the 42424 port as receiving port for all packets, to fi
 
 ![ScreenShot](png/message1.png)
 ![ScreenShot](png/message2.png)
-## Now we will try to Decode from base64 what those packet messages mean when we recieved.
+## Now we will try to Decode from base64 what those packet messages that we recieved.
 ![ScreenShot](png/decode1.png)
 ![ScreenShot](png/decode2.png)
 
