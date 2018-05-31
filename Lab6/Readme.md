@@ -1,4 +1,4 @@
-<display>
+<details>
 <summary>Task</summary>
   
 ## UDP & Network Sniffers
@@ -51,7 +51,7 @@ Documentul trebuie să conțină:
 - Descrieți cum poate fi combinat UDP și TCP pentru așa tip de aplicație, care ar fi motivul și avantajul unei astfel de abordări.
 
 **Notă:** La moment, aplicația nu funcționează conform așteptărilor între calculatoare aceleași rețele. Instanțele aplicației pe același calculator, este metoda recomandată de testare.
-</display>
+</details>
 
 # Laboratory work 6
 
