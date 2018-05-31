@@ -53,18 +53,22 @@ And the `ezp0eXBlIDpjaGF0LCA6dHh0ICJUSGlzIGlzIG5vdCBqdXN0IGEgc2ltcGxlIG1lc3NhZ2U
 
 **message**: `{:type :online, :username "mac2"}`
 ## I will now try to create an user and send an message on his behalf to the mac2 using packet sender.
-
 **Creating the user**: `{:type :online, :username "crazy potato"}`
+
 **Ussid**: `e369b064-6463-11e8-adc0-fa7ae01bbebc`
+
 **PreEncode**: `1527723035239|e369b064-6463-11e8-adc0-fa7ae01bbebc|:all|ezp0eXBlIDpvbmxpbmUsIDp1c2VybmFtZSAiY3JhenkgcG90YXRvIn0=`
+
 **Encoded**: `MTUyNzcyMzAzNTIzOXxlNDFjZTBiOC02NDYyLTExZTgtYWRjMC1mYTdhZTAxYmJlYmN8OmFsbHxlenAwZVhCbElEcHZibXhwYm1Vc0lEcDFjMlZ5Ym1GdFpTQWlZM0poZW5rZ2NHOTBZWFJ2SW4wPQ==`
 ![ScreenShot](png/packetsend.png)
 ![ScreenShot](png/packetsend1.png)
 ### Sending his message to mac2 with ussid `501b5cab-d3d5-4d73-98fc-0ef8a9494ec1`:
-
 **message**: `{:type :chat, :txt "This is a try on sending a message with packets"}`
+
 **Encoded message**: `ezp0eXBlIDpjaGF0LCA6dHh0ICJUaGlzIGlzIGEgdHJ5IG9uIHNlbmRpbmcgYSBtZXNzYWdlIHdpdGggcGFja2V0cyJ9=`
+
 **PreEncode**: `1527723035249|e369b064-6463-11e8-adc0-fa7ae01bbebc|501b5cab-d3d5-4d73-98fc-0ef8a9494ec1|ezp0eXBlIDpjaGF0LCA6dHh0ICJUaGlzIGlzIGEgdHJ5IG9uIHNlbmRpbmcgYSBtZXNzYWdlIHdpdGggcGFja2V0cyJ9=`
+
 **Encoded**: `MTUyNzcyMzAzNTI0OXw1MDFiNWNhYi1kM2Q1LTRkNzMtOThmYy0wZWY4YTk0OTRlYzF8ZTM2OWIwNjQtNjQ2My0xMWU4LWFkYzAtZmE3YWUwMWJiZWJjfGV6cDBlWEJsSURwamFHRjBMQ0E2ZEhoMElDSlVhR2x6SUdseklHRWdkSEo1SUc5dUlITmxibVJwYm1jZ1lTQnRaWE56WVdkbElIZHBkR2dnY0dGamEyVjBjeUo5PQ==`
 ![ScreenShot](png/packetsend2.png)
 If you have multiple users and register, you will observe that multiple packets are sent, this happens because after receiving this packet, the app broadcasts packets to all users that are active.
