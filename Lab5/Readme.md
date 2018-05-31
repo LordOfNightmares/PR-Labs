@@ -97,8 +97,10 @@ Atît clientul, cît și serverul pot fi aplicații simple fără GUI.
   fișierul în previewer-ul suportat de OS.
   
 </details>
+
 # Commands on the server side
-`
+
+```
 ===============
 === h e l p ===
 ===============
@@ -113,7 +115,7 @@ Atît clientul, cît și serverul pot fi aplicații simple fără GUI.
 
 /exit - closes connection
 ===============
-`
+```
 
 # Commands on the client side
 
