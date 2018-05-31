@@ -19,7 +19,9 @@ The application is using the 42424 port as receiving port for all packets, to fi
 
 #### Packet 1
 **Decode1**: `MTUyNzcxODk1MjQwMHw1MDFiNWNhYi1kM2Q1LTRkNzMtOThmYy0wZWY4YTk0OTRlYzF8YTYwODQzZGUtNzI4Zi00ZjkzLTkxYTYtNmY1MDViODgwZGNlfGV6cDBlWEJsSURwamFHRjBMQ0E2ZEhoMElDSlVTR2x6SUdseklHNXZkQ0JxZFhOMElHRWdjMmx0Y0d4bElHMWxjM05oWjJVdUluMD0=`
+
 **Decode2**: `1527718952400|501b5cab-d3d5-4d73-98fc-0ef8a9494ec1|a60843de-728f-4f93-91a6-6f505b880dce|ezp0eXBlIDpjaGF0LCA6dHh0ICJUSGlzIGlzIG5vdCBqdXN0IGEgc2ltcGxlIG1lc3NhZ2UuIn0=`
+
 **Decoded** = `{:type :chat, :txt "THis is not just a simple message."}`
 ##
 Here the `1527718952400` is time in milisecconds.
@@ -31,22 +33,25 @@ And the `ezp0eXBlIDpjaGF0LCA6dHh0ICJUSGlzIGlzIG5vdCBqdXN0IGEgc2ltcGxlIG1lc3NhZ2U
 
 #### Packet 2
 **Decode1**: `MTUyNzcxODk1MjQwMnxhNjA4NDNkZS03MjhmLTRmOTMtOTFhNi02ZjUwNWI4ODBkY2V8NTAxYjVjYWItZDNkNS00ZDczLTk4ZmMtMGVmOGE5NDk0ZWMxfGV6cDBlWEJsSURwa1pXeHBkbVZ5WldSOQ==`
+
 **Decode2**: `1527718952402|a60843de-728f-4f93-91a6-6f505b880dce|501b5cab-d3d5-4d73-98fc-0ef8a9494ec1|ezp0eXBlIDpkZWxpdmVyZWR9`
+
 **Decoded** = `{:type :delivered}`
-
-
 ## Here i try inspecting the packets i recieved at the step of creating a new user
 
 #### Packet 1
 **Decode after the step of user creation**: `MTUyNzcyMzAzNTIzOXw2YjlhYjAxMy1mZDBhLTRlZjMtOTcwNS1kYmQ1ODUxNjllMTB8OmFsbHxlenAwZVhCbElEcHZibXhwYm1Vc0lEcDFjMlZ5Ym1GdFpTQWlhMnNpZlE9PQ==`
+
 **Decoded**: `1527723035239|6b9ab013-fd0a-4ef3-9705-dbd585169e10|:all|ezp0eXBlIDpvbmxpbmUsIDp1c2VybmFtZSAia2sifQ==`
+
 **message**: `{:type :online, :username "kk"}`
 
 #### Packet 2
 **Decode after recieving online users currently**: `MTUyNzcyMzAzNTI0OXw1MDFiNWNhYi1kM2Q1LTRkNzMtOThmYy0wZWY4YTk0OTRlYzF8NmI5YWIwMTMtZmQwYS00ZWYzLTk3MDUtZGJkNTg1MTY5ZTEwfGV6cDBlWEJsSURwdmJteHBibVVzSURwMWMyVnlibUZ0WlNBaWJXRmpNaUo5`
-**Decoded**: `1527723035249|501b5cab-d3d5-4d73-98fc-0ef8a9494ec1|6b9ab013-fd0a-4ef3-9705-dbd585169e10|ezp0eXBlIDpvbmxpbmUsIDp1c2VybmFtZSAibWFjMiJ9`
-**message**: `{:type :online, :username "mac2"}`
 
+**Decoded**: `1527723035249|501b5cab-d3d5-4d73-98fc-0ef8a9494ec1|6b9ab013-fd0a-4ef3-9705-dbd585169e10|ezp0eXBlIDpvbmxpbmUsIDp1c2VybmFtZSAibWFjMiJ9`
+
+**message**: `{:type :online, :username "mac2"}`
 ## I will now try to create an user and send an message on his behalf to the mac2 using packet sender.
 
 **Creating the user**: `{:type :online, :username "crazy potato"}`
