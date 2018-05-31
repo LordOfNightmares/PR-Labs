@@ -99,13 +99,23 @@ Atît clientul, cît și serverul pot fi aplicații simple fără GUI.
   fișierul în previewer-ul suportat de OS.
   
 </details>
-
-# Commands on the server side
+## Server side functions/classes description
 
 ```
-===============
-=== h e l p ===
-===============
+def functions(logger,connection, data): # handles the protocol/functions of the server
+def handle(connection, address):        # handles the socket connection and data recieved and sent
+class Server(object): 					# handles the sockets instatiation on threads and listens all clients connected
+```
+## Client side description
+
+```
+def start_client(address, port, buffer): #handles the socket connection and data recieved and sent
+```
+
+
+# Commands on the server side
+ss
+```
 /help - displays this list of available commands
 
 /hello <text> - returns the text that was sent as param
@@ -116,7 +126,6 @@ Atît clientul, cît și serverul pot fi aplicații simple fără GUI.
 /joke - tells a python joke
 
 /exit - closes connection
-===============
 ```
 
 # Commands on the client side
