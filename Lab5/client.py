@@ -7,16 +7,18 @@ def start_client(address, port, buffer):
     # Bind to the given address and port
     client_socket.connect((address, port))
     print("=== Initiating connection to %s:%s" % (address, port))
-    data = bytes("something", 'utf-8')
-    while data != bytes("close", 'utf-8'):
+    while True:
         print("=== Connecting to %s" % (address,))
         # Recv up to 1kB of data
-        data = bytes(input(), 'utf-8')
-        client_socket.sendall(data)
+        data = input()
+        client_socket.sendall(data.encode())
         result = client_socket.recv(buffer)
-        print(">>> Sent data %s" % (result,))
+        print(">>> %s" % (result.decode(),))
         # Send `data` to the client
         # Close outgoing connection
+        if data == '/close':
+            print('You ended the connection manually.')
+            break
     client_socket.close()
 
 
