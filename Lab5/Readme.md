@@ -98,7 +98,7 @@ Atît clientul, cît și serverul pot fi aplicații simple fără GUI.
   
 </details>
 # Commands on the server side
-```
+`
 ===============
 === h e l p ===
 ===============
@@ -113,11 +113,12 @@ Atît clientul, cît și serverul pot fi aplicații simple fără GUI.
 
 /exit - closes connection
 ===============
-```
+`
+
 # Commands on the client side
-```
-/close - closes the connection from the client tot he server.
-```
+
+`/close - closes the connection from the client tot he server.`
+
 ### ServerStart
 
 ![ScreenShot](png/serverstart.png)
