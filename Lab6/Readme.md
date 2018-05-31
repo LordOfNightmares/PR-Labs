@@ -38,7 +38,6 @@ And the `ezp0eXBlIDpjaGF0LCA6dHh0ICJUSGlzIGlzIG5vdCBqdXN0IGEgc2ltcGxlIG1lc3NhZ2U
 
 **Decoded** = `{:type :delivered}`
 ## Here i try inspecting the packets i recieved at the step of creating a new user
-##
 #### •Packet 1
 **Decode after the step of user creation**: `MTUyNzcyMzAzNTIzOXw2YjlhYjAxMy1mZDBhLTRlZjMtOTcwNS1kYmQ1ODUxNjllMTB8OmFsbHxlenAwZVhCbElEcHZibXhwYm1Vc0lEcDFjMlZ5Ym1GdFpTQWlhMnNpZlE9PQ==`
 
