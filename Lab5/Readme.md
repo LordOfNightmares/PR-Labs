@@ -95,3 +95,13 @@ Atît clientul, cît și serverul pot fi aplicații simple fără GUI.
   Clientul trebuie să salveze acest fișierul primit (păstrând extensia) și să afișeze calea absolută la locația salvată, sau să deschidă 
   fișierul în previewer-ul suportat de OS.
  </details>
+ ### ServerStart
+ ![ScreenShot](png/serverstart.png)
+ ### AfterClientConnects
+ ![ScreenShot](png/afterclientconnect.png)
+ ### UsingServerCommands
+ ![ScreenShot](png/usingservercommands.png)
+ ### ServerRecievesTheCommands
+ ![ScreenShot](png/serverrecievesthecommands.png)
+ ### MoreThanOneConnection
+  ![ScreenShot](png/morethanoneconnection.png)
