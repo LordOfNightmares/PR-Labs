@@ -99,6 +99,7 @@ Atît clientul, cît și serverul pot fi aplicații simple fără GUI.
   fișierul în previewer-ul suportat de OS.
   
 </details>
+
 ## Server side functions/classes description
 
 ```
